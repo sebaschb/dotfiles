@@ -31,16 +31,6 @@ echo source $HOME/.dotfiles/.zshrc >> ~/.zshrc
 PNPM_HOME=$HOME/.local/share/pnpm
 PATH=$HOME/bin:/usr/local/bin:$HOME/.nvm:/usr/local/go/bin:$HOME/.deno/bin:$HOME/.cargo/bin:/usr/share/go/bin:$PNPM_HOME:$PATH
 
-# Go install
-wget --quiet https://go.dev/dl/go1.18.1.linux-amd64.tar.gz
-tar -xvf go1.18.1.linux-amd64.tar.gz
-sudo mv go /usr/share
-rm go1.18.1.linux-amd64.tar.gz
-
-# Go installations
-go install github.com/muesli/duf@latest
-go install github.com/charmbracelet/glow@latest
-
 # Deno install
 curl -fsSL https://deno.land/x/install/install.sh | sh
 
@@ -50,15 +40,6 @@ curl -fsSL https://get.pnpm.io/install.sh | PNPM_VERSION=7.0.0-rc.7 sh -
 source $HOME/.nvm/nvm.sh
 nvm install --lts
 npm install -g svgo wipeclean ttf2woff
-
-# Rust install
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-
-# Cargo installations
-sudo apt-get install libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev -y
-cargo install jless
-cargo install zellij
-cargo install hyperfine
 
 # Docker install
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
